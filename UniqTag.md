@@ -186,6 +186,36 @@ It converts between every format known (just about)
 + PDF
 + ODT and docx (yes, really)
 
+Abstract
+================================================================================
+
+------------------------------------------------------------
+
+### When working on an ongoing genome sequencing and assembly project, it is rather inconvenient when gene identifiers change from one build of the assembly to the next.
+
+------------------------------------------------------------
+
+### The gene labelling system described here, UniqTag, addresses this common challenge.
+
+------------------------------------------------------------
+
+### UniqTag assigns a unique identifier to each gene that is a representative *k*-mer, a string of length *k*, selected from the sequence of that gene.
+
+------------------------------------------------------------
+
+### Unlike serial numbers, these identifiers are stable between different assemblies and annotations of the same data without requiring that previous annotations be lifted over by sequence alignment.
+
+------------------------------------------------------------
+
+### We assign UniqTag identifiers to nine builds of the Ensembl human genome spanning seven years to demonstrate this stability.
+
+Results
+================================================================================
+
+------------------------------------------------------------
+
+![Figure 1](images/ensembl.png)
+
 fin
 ================================================================================
 
