@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Shaun D Jackman" />
+  <meta name="dcterms.date" content="2014-09-19" />
+  <title>UniqTag: Content-derived unique and stable identifiers for gene annotation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+    </style>
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="uniqtag" class="slide level2">
+<h1>UniqTag</h1>
+<p>Content-derived unique and stable identifiers for gene annotation</p>
+<p>Shaun Jackman <a href="http://twitter.com/sjackman">@sjackman</a></p>
+<p>2014-08-18</p>
+<p><a href="http://creativecommons.org/licenses/by/4.0/"><img src="images/cc-by.png" alt="Creative Commons Attribution License" /></a></p>
+<p><a href="https://github.com/sjackman/uniqtag-slides">Fork me on GitHub!</a></p>
+</section>
+<section id="shaun-jackman" class="slide level2">
+<h1>Shaun Jackman</h1>
+<p><a href="http://bcgsc.ca">Genome Sciences Centre</a>, BC Cancer Agency<br />Vancouver, Canada<br /><a href="http://twitter.com/sjackman">@sjackman</a><br /><a href="https://github.com/sjackman">github.com/sjackman</a><br /><a href="http://sjackman.ca">sjackman.ca</a></p>
+<figure>
+<img src="images/sjackman.jpg" />
+</figure>
+</section>
+<section><section id="a-reproducible-manuscript" class="titleslide slide level1"><h1>A reproducible manuscript</h1></section><section id="one-makefile" class="slide level2">
+<h1>One Makefile</h1>
+<ul>
+<li>Downloads the data</li>
+<li>Runs the command-line programs</li>
+<li>Performs the statistical analyses using <a href="http://www.rstudio.com/">R</a></li>
+<li>and Generates the TSV tables</li>
+<li>Renders the figures using <a href="http://ggplot2.org/">ggplot2</a></li>
+<li>Renders the supplementary material using <a href="http://rmarkdown.rstudio.com/">RMarkdown</a></li>
+<li>Renders the manuscript using <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a></li>
+</ul>
+</section><section id="turns-this" class="slide level2">
+<h1>Turns this</h1>
+<figure>
+<img src="images/UniqTag-md.png" alt="UniqTag Markdown" /><figcaption><a href="https://github.com/sjackman/uniqtag-paper/blob/master/UniqTag.md">UniqTag Markdown</a></figcaption>
+</figure>
+</section><section id="into-this" class="slide level2">
+<h1>Into this</h1>
+<figure>
+<img src="images/UniqTag-pdf.png" alt="UniqTag PDF" /><figcaption><a href="http://biorxiv.org/content/early/2014/08/01/007583.full.pdf">UniqTag PDF</a></figcaption>
+</figure>
+</section></section>
+<section><section id="open-science" class="titleslide slide level1"><h1>Open Science</h1></section><section id="github" class="slide level2">
+<h1>GitHub</h1>
+<p>The markdown and scripts to render <a href="https://sjackman.github.io/uniqtag-paper">the paper</a>,<br />the markdown and scripts to render <a href="https://sjackman.github.io/uniqtag-slides">these slides</a> and<br /><a href="https://github.com/sjackman/uniqtag">the software</a> are all on <a href="https://github.com/">GitHub</a>.</p>
+</section><section id="biorxiv" class="slide level2">
+<h1>bioRxiv</h1>
+<p>The preprint PDF is self archived on <a href="http://biorxiv.org/content/early/2014/08/01/007583">bioRxiv</a>.</p>
+<figure>
+<img src="images/bioRxiv.png" alt="doi:10.1101/007583" /><figcaption>doi:10.1101/007583</figcaption>
+</figure>
+</section></section>
+<section><section id="workflow" class="titleslide slide level1"><h1>Workflow</h1></section><section class="slide level2">
+
+<p><a href="http://kieranhealy.org/blog/archives/2014/01/23/plain-text/">Plain Text, Papers, Pandoc</a> by <a href="http://kieranhealy.org/">Kieran Healy</a></p>
+<figure>
+<img src="images/workflow-rmd-md.png" alt="I promise this is less insane than it appears" /><figcaption>I promise this is less insane than it appears</figcaption>
+</figure>
+</section><section id="make-is-beautiful" class="slide level2">
+<h1>Make is beautiful</h1>
+<p>Tell Make how to create one type of file from another<br />and which files you want to create.</p>
+<div class="fragment">
+<p>Make looks at which files you have<br />and figures out how to create the files that you want.</p>
+</div>
+</section><section id="make-example" class="slide level2">
+<h1>Make example</h1>
+<pre class="sourceCode makefile"><code class="sourceCode makefile"><span class="dv">%.bam:</span><span class="dt"> %.sam</span>
+    samtools view -Sb <span class="ch">$&lt;</span> &gt;<span class="ch">$@</span>
+
+<span class="dv">%.sort.bam:</span><span class="dt"> %.bam</span>
+    samtools sort <span class="ch">$&lt;</span> <span class="ch">$*</span>.sort
+
+<span class="dv">%.bam.bai:</span><span class="dt"> %.bam</span>
+    samtools index <span class="ch">$&lt;</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">touch</span> hello.sam
+<span class="kw">make</span> hello.sort.bam.bai</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">samtools</span> view -Sb hello.sam <span class="kw">&gt;</span>hello.bam
+<span class="kw">samtools</span> sort hello.bam hello.sort
+<span class="kw">samtools</span> index hello.sort.bam</code></pre>
+</section><section id="markdown-for-the-manuscript" class="slide level2">
+<h1>Markdown for the manuscript</h1>
+<p>Markdown is a plain-text typesetting language</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">A header
+========
+
+A list:
+
++ <span class="fl">This text is *italic*</span>
++ <span class="fl">This text is **bold**</span></code></pre>
+<h3 id="a-header">A header</h3>
+<p>A list:</p>
+<ul>
+<li>This text is <em>italic</em></li>
+<li>This text is <strong>bold</strong></li>
+</ul>
+</section><section id="rmarkdown" class="slide level2">
+<h1>RMarkdown</h1>
+<ul>
+<li><a href="http://rmarkdown.rstudio.com/">RMarkdown</a> interleaves text with code in <a href="http://www.rstudio.com/">R</a></li>
+<li>Code that calculates summary statistics</li>
+<li>Code that generates tables</li>
+<li>Code that renders figures using <a href="http://ggplot2.org/">ggplot2</a></li>
+<li><a href="http://rmarkdown.rstudio.com/">RMarkdown</a> is ideal for supplementary material</li>
+</ul>
+</section><section id="pandoc" class="slide level2">
+<h1>Pandoc</h1>
+<p><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> renders attractive documents and slides<br />from plain-text typesetting formats</p>
+<p>It converts between every format known (just about)</p>
+<ul>
+<li>Markdown</li>
+<li>HTML</li>
+<li>LaTeX</li>
+<li>PDF</li>
+<li>ODT and docx (yes, really)</li>
+</ul>
+</section></section>
+<section><section id="abstract" class="titleslide slide level1"><h1>Abstract</h1></section><section class="slide level2">
+
+<h3 id="when-working-on-an-ongoing-genome-sequencing-and-assembly-project-it-is-rather-inconvenient-when-gene-identifiers-change-from-one-build-of-the-assembly-to-the-next.">When working on an ongoing genome sequencing and assembly project, it is rather inconvenient when gene identifiers change from one build of the assembly to the next.</h3>
+</section><section class="slide level2">
+
+<h3 id="the-gene-labelling-system-described-here-uniqtag-addresses-this-common-challenge.">The gene labelling system described here, UniqTag, addresses this common challenge.</h3>
+</section><section class="slide level2">
+
+<h3 id="uniqtag-assigns-a-unique-identifier-to-each-gene-that-is-a-representative-k-mer-a-string-of-length-k-selected-from-the-sequence-of-that-gene.">UniqTag assigns a unique identifier to each gene that is a representative <em>k</em>-mer, a string of length <em>k</em>, selected from the sequence of that gene.</h3>
+</section><section class="slide level2">
+
+<h3 id="unlike-serial-numbers-these-identifiers-are-stable-between-different-assemblies-and-annotations-of-the-same-data-without-requiring-that-previous-annotations-be-lifted-over-by-sequence-alignment.">Unlike serial numbers, these identifiers are stable between different assemblies and annotations of the same data without requiring that previous annotations be lifted over by sequence alignment.</h3>
+</section><section class="slide level2">
+
+<h3 id="we-assign-uniqtag-identifiers-to-nine-builds-of-the-ensembl-human-genome-spanning-seven-years-to-demonstrate-this-stability.">We assign UniqTag identifiers to nine builds of the Ensembl human genome spanning seven years to demonstrate this stability.</h3>
+</section></section>
+<section><section id="results" class="titleslide slide level1"><h1>Results</h1></section><section class="slide level2">
+
+<figure>
+<img src="images/ensembl.png" alt="Figure 1" /><figcaption>Figure 1</figcaption>
+</figure>
+</section></section>
+<section><section id="fin" class="titleslide slide level1"><h1>fin</h1></section><section id="links" class="slide level2">
+<h1>Links</h1>
+<p><a href="https://sjackman.github.io/uniqtag-paper">the paper</a> | <a href="https://sjackman.github.io/uniqtag-slides">these slides</a> | <a href="https://github.com/sjackman/uniqtag">the software</a><br /><a href="https://github.com/">GitHub</a> | <a href="http://biorxiv.org/content/early/2014/08/01/007583">bioRxiv</a><br /><a href="http://www.rstudio.com/">R</a> | <a href="http://ggplot2.org/">ggplot2</a> | <a href="http://rmarkdown.rstudio.com/">RMarkdown</a> | <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a><br /><a href="http://kieranhealy.org/blog/archives/2014/01/23/plain-text/">Plain Text, Papers, Pandoc</a></p>
+<p><a href="http://twitter.com/sjackman">@sjackman</a> | <a href="https://github.com/sjackman">github.com/sjackman</a> | <a href="http://sjackman.ca">sjackman.ca</a></p>
+<p><a href="https://sjackman.github.io/uniqtag-slides">sjackman.github.io/uniqtag-slides</a></p>
+<p><a href="https://github.com/sjackman/uniqtag-slides">Fork me on GitHub!</a></p>
+</section><section id="shaun-jackman-1" class="slide level2">
+<h1>Shaun Jackman</h1>
+<p><a href="http://bcgsc.ca">Genome Sciences Centre</a>, BC Cancer Agency<br />Vancouver, Canada<br /><a href="http://twitter.com/sjackman">@sjackman</a><br /><a href="https://github.com/sjackman">github.com/sjackman</a><br /><a href="http://sjackman.ca">sjackman.ca</a></p>
+<figure>
+<img src="images/sjackman.jpg" alt="Photo" /><figcaption>Photo</figcaption>
+</figure>
+</section></section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+        theme: 'sky', // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    </body>
+</html>
